@@ -10,8 +10,8 @@ type User = {
 type AuthState = {
   user: User | null;
   setUser: (u: User | null) => void;
-  loginLocal: (user: User) => Promise<void>;
-  logout: () => Promise<void>;
+  loginLocal: (user: User) => void;
+  logout: () => void;
 };
 
 export const useAuthStore = create<AuthState>()(
@@ -21,12 +21,12 @@ export const useAuthStore = create<AuthState>()(
       setUser: (u: User | null) => set({ user: u }),
 
       // For local-only auth (signup/login), call loginLocal after verifying credentials
-      loginLocal: async (user) => {
+      loginLocal:  (user) => {
         // you can add extra logic here (e.g. update lastLogin timestamp)
         set({ user });
       },
 
-      logout: async () => {
+      logout:  () => {
         set({ user: null });
       },
     }),

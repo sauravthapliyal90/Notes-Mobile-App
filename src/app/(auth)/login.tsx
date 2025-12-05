@@ -22,7 +22,7 @@ export default function Login() {
         const hashed = await hashString(pin);
         if (hashed !== user.pinHash) return setError('Invalid PIN');
         await loginLocal({ id: user.id, username: user.username });
-        router.replace('/');
+        router.push('/(app)/home');
     };
 
 

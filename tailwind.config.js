@@ -8,9 +8,18 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+       fontFamily: {
+        urbanist: ["Urbanist_400Regular"],
+        "urbanist-semibold": ["Urbanist_600SemiBold"],
+        "urbanist-bold": ["Urbanist_700Bold"],
+      },
       colors: {
         primary: "#343434",
-        secondary: "#8e8e8e"
+        // secondary: "#8e8e8e",
+        secondary:"#00909d",
+        green:"#E4FFD3",
+        yellow:"#FBFFDE",
+        red: "#FFDEEF"
       }
     },
   },

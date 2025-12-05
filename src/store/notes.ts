@@ -8,8 +8,8 @@ import { nowIso } from "../utils/date";
 
 type NotesState = {
   notes: Note[];
-  addNote: (note: Omit<Note, "createdAt" | "updatedAt">) => void;
-  updateNote: (note: Partial<Note> & { id: string }) => void;
+  addNote: (note: Omit<Note, "createdAt" | "updatedAt">) => void; // omit means not inculded
+  updateNote: (note: Partial<Note> & { id: string }) => void; // Partail means all the Notes feilds become optional
   deleteNote: (id: string) => void;
   getNoteById: (id: string) => Note | undefined;
   clearAll: () => void;
